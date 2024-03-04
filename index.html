@@ -59,36 +59,16 @@ body {
   z-index: 99;
 }
 
-#header-container {
+#gallery-container {
   position: relative;
   z-index: 2;
 }
 
-#header {
-  font-family: Caslon;
-  font-size: 50px;
-  text-align: center;
-  position: absolute;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#subHeader {
-  font-family: Caslon;
-  text-align: center;
-  position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#image {
+.gallery-image {
   width: 100%;
   position: absolute;
-  top: 250px; /* Adjust the top value to your desired position */
+  top: 0;
   left: 0;
-  z-index: 1;
 }
 
 a:link {
@@ -119,12 +99,18 @@ a:active {
       </div>
    </div>
 
-   <div id="header-container">
-      <div id="header">Matthew Thomas</div>
-      <div id="subHeader">Photographer, Videographer, and Editor</div>
+   <div id="gallery-container">
+      <img src="-MG-5908.jpg" alt="Image 1" class="gallery-image">
+      <img src="-MG-6368.jpg" alt="Image 2" class="gallery-image">
+      <img src="IMG_7309.jpg" alt="Image 3" class="gallery-image">
+      <img src="_MG_0859.jpg" alt="Image 4" class="gallery-image">
+      <img src="_MG_0889-Enhanced-NR.jpg" alt="Image 5" class="gallery-image">
+      <img src="_MG_1180.jpg" alt="Image 6" class="gallery-image">
+      <img src="_MG_1292.jpg" alt="Image 7" class="gallery-image">
+      <img src="_MG_6204.jpg" alt="Image 8" class="gallery-image">
+      <img src="_MG_6258-Pano-2.jpg" alt="Image 9" class="gallery-image">
+      <img src="_MG_6441.jpg" alt="Image 10" class="gallery-image">
    </div>
-   
-   <img src="homeImage.jpg" alt="hi" id="image">
 
 </body>
 </html>
