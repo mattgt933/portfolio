@@ -61,7 +61,7 @@ body {
 
 #gallery-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 16px;
   padding: 16px;
   position: relative;
@@ -74,6 +74,10 @@ body {
 .gallery-image {
   width: 100%;
   height: auto;
+}
+
+.gallery-container:nth-child(2n) .gallery-image {
+  grid-column: span 2;
 }
 
 a:link {
