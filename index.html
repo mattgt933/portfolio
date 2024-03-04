@@ -15,9 +15,9 @@
 body {
   background-color: #e6e6e6;
   color: #000000;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .topNav {
@@ -59,18 +59,28 @@ body {
   z-index: 99;
 }
 
+#header-container {
+  position: relative;
+  z-index: 2;
+}
+
 #header {
   font-family: Caslon;
   font-size: 50px;
-  margin-top: 150px; /* Adjust margin-top to create space for the fixed topNav */
   text-align: center;
-  z-index: 2;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #subHeader {
   font-family: Caslon;
   text-align: center;
-  z-index: 2;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #image {
@@ -109,8 +119,11 @@ a:active {
       </div>
    </div>
 
-   <div id="header">Matthew Thomas</div>
-   <div id="subHeader">Photographer, Videographer, and Editor</div>
+   <div id="header-container">
+      <div id="header">Matthew Thomas</div>
+      <div id="subHeader">Photographer, Videographer, and Editor</div>
+   </div>
+   
    <img src="homeImage.jpg" alt="hi" id="image">
 
 </body>
