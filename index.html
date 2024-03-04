@@ -6,6 +6,13 @@
      font-family: RC;
      src: url('R&C-Demo.otf'); 
    } 
+   
+   @font-face { 
+     font-family: Caslon;
+     src: url('LibreCaslonText-Regular.ttf'); 
+   } 
+   
+   
 body {
   background-color: #e6e6e6;
   color: #000000;
@@ -13,6 +20,30 @@ body {
 
   #name {
   font-family: RC;
+  position: fixed;
+   left: 35px;
+   top: 0px;
+  }
+
+  .nav {
+   position: fixed;
+   right: 35px;
+   top: 20px;
+   float: right;
+   text-align: right;
+   display: inline-block;
+   width: 32%;
+  }
+  
+  .menu {
+  font-family: Caslon;
+  position: relative;
+   right: 35px;
+   top: 13px;
+   text-align: right;
+   width: 8%;
+   float: right;
+   display: inline-block;
   }
 </style>
 </head>
@@ -20,10 +51,10 @@ body {
    <div id="topNav">
 <h1 id="name">MATTHEW THOMAS</h1>
 <div id="nav">
-   <p class="menu portfolio">Portfolio</p>
-   <p class="menu about">About</p>
-   <p class="menu contact">Contact</p>
    <p class="menu hire">Hire</p>
+   <p class="menu contact">Contact</p>
+   <p class="menu about">About</p>
+   <p class="menu portfolio">Portfolio</p>
 </div>
    </div>
 
