@@ -60,24 +60,20 @@ body {
 }
 
 #gallery-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 16px;
   position: relative;
   z-index: 2;
   margin-top: 200px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .gallery-image {
-  width: 100%;
-  height: auto;
-}
-
-.gallery-container:nth-child(2n+1) .gallery-image {
-  grid-column: span 2;
+  width: calc(33.33% - 16px); /* Adjust as needed */
+  margin-bottom: 16px;
 }
 
 a:link {
