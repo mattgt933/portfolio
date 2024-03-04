@@ -60,15 +60,17 @@ body {
 }
 
 #gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the column width as needed */
+  grid-gap: 16px; /* Adjust the gap between images as needed */
+  padding: 16px;
   position: relative;
   z-index: 2;
 }
 
 .gallery-image {
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: auto;
 }
 
 a:link {
