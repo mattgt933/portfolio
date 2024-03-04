@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
    @font-face { 
      font-family: RC;
@@ -71,11 +72,6 @@ body {
   margin-right: 30px;
 }
 
-.gallery-image {
-  width: calc(33.33% - 16px); /* Adjust as needed */
-  margin-bottom: 16px;
-}
-
 a:link {
   color: black;
 }
@@ -105,17 +101,29 @@ a:active {
    </div>
 
    <div id="gallery-container">
-      <img src="-MG-5908.jpg" alt="Image 1" class="gallery-image">
-      <img src="-MG-6368.jpg" alt="Image 2" class="gallery-image">
-      <img src="IMG_7309.jpg" alt="Image 3" class="gallery-image">
-      <img src="_MG_0859.jpg" alt="Image 4" class="gallery-image">
-      <img src="_MG_0889-Enhanced-NR.jpg" alt="Image 5" class="gallery-image">
-      <img src="_MG_1180.jpg" alt="Image 6" class="gallery-image">
-      <img src="_MG_1292.jpg" alt="Image 7" class="gallery-image">
-      <img src="_MG_6204.jpg" alt="Image 8" class="gallery-image">
-      <img src="_MG_6258-Pano-2.jpg" alt="Image 9" class="gallery-image">
-      <img src="_MG_6441.jpg" alt="Image 10" class="gallery-image">
-      <!-- Repeat for more images -->
+      <div class="w3-row" id="myGrid" style="margin-bottom:128px">
+  <div class="w3-third">
+    <img src="-MG-5908.jpg" alt="Image 1">
+    <img src="-MG-6368.jpg" alt="Image 2">
+    <img src="IMG_7309.jpg" alt="Image 3">
+    <img src="_MG_0859.jpg" alt="Image 4">
+    <img src="_MG_0889-Enhanced-NR.jpg" alt="Image 5">
+    <img src="_MG_1180.jpg" alt="Image 6">
+  </div>
+
+  <div class="w3-third">
+    <img src="_MG_1292.jpg" alt="Image 7">
+    <img src="_MG_6204.jpg" alt="Image 8">
+    <img src="_MG_6258-Pano-2.jpg" alt="Image 9">
+    <img src="_MG_6441.jpg" alt="Image 10">
+    <!-- Add more images as needed -->
+  </div>
+
+  <div class="w3-third">
+    <!-- Add more images as needed -->
+  </div>
+</div>
+
    </div>
 
 </body>
