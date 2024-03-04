@@ -12,107 +12,106 @@
      src: url('LibreCaslonText-Regular.ttf'); 
    } 
    
-   
 body {
   background-color: #e6e6e6;
   color: #000000;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-   .topNav {
-      position: fixed;
-      left: 0px;
-      top: 0px;
-      right: 0px;
-      width: 100%;
-     height: 80px;
-      backdrop-filter: blur(10px);
-      z-index: 99 !important;
-   }
+.topNav {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 80px;
+  backdrop-filter: blur(10px);
+  z-index: 99 !important;
+}
 
-  #name {
+#name {
   font-family: RC;
   position: fixed;
-   left: 35px;
-   top: 0px;
-     z-index: 99;
-  }
+  left: 35px;
+  top: 0px;
+  z-index: 99;
+}
 
-  .nav {
-   position: fixed;
-   right: 35px;
-   top: 20px;
-   float: right;
-   text-align: right;
-   display: inline-block;
-   width: 32%;
-     z-index: 99;
-  }
-  
-  .menu {
+#nav {
+  position: fixed;
+  right: 35px;
+  top: 20px;
+  float: right;
+  text-align: right;
+  display: inline-block;
+  width: 32%;
+  z-index: 99;
+}
+
+.menu {
   font-family: Caslon;
-  /*position: relative;
-   right: 35px;
-   top: 13px;
-     */
-   text-align: right;
-   width: 8%;
-   float: right;
-   display: inline-block;
-     z-index: 99;
-  }
-  
-  #header {
+  text-align: right;
+  width: 8%;
+  float: right;
+  display: inline-block;
+  z-index: 99;
+}
+
+#header {
   font-family: Caslon;
   font-size: 50px;
-   position: absolute;
-  top: 200px;
-  width: 100%;
+  margin-top: 150px; /* Adjust margin-top to create space for the fixed topNav */
   text-align: center;
-     z-index: 2;
-  }
+  z-index: 2;
+}
 
-   #image {
-      width: 100%;
-      position: absolute;
-      top: 80px;
-      left: -10px;
-   z-index: 1;
-   }
+#subHeader {
+  font-family: Caslon;
+  text-align: center;
+  z-index: 2;
+}
+
+#image {
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  left: -10px;
+  z-index: 1;
+}
 
 a:link {
   color: black;
 }
 
-/* visited link */
 a:visited {
   color: black;
 }
 
-/* mouse over link */
 a:hover {
   color: black;
 }
 
-/* selected link */
 a:active {
   color: black;
 }
 </style>
 </head>
 <body>
-   <div id="topNav">
-<a href="/"><h1 id="name">MATTHEW THOMAS</h1></a>
-<div id="nav">
-   <p class="menu hire">Hire</p>
-   <p class="menu contact">Contact</p>
-   <p class="menu about">About</p>
-   <p class="menu portfolio">Portfolio</p>
-</div>
+   <div class="topNav">
+      <a href="/"><h1 id="name">MATTHEW THOMAS</h1></a>
+      <div id="nav">
+         <p class="menu hire">Hire</p>
+         <p class="menu contact">Contact</p>
+         <p class="menu about">About</p>
+         <p class="menu portfolio">Portfolio</p>
+      </div>
    </div>
 
-<h1 id="header">Matthew Thomas</h1>
-<p id="subHeader">Photographer, Videographer, and Editor</p>
-<img src="homeImage.jpg" alt="hi" id="image">
+   <div id="header">Matthew Thomas</div>
+   <div id="subHeader">Photographer, Videographer, and Editor</div>
+   <img src="homeImage.jpg" alt="hi" id="image">
 
 </body>
 </html>
