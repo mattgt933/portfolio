@@ -40,22 +40,16 @@ body {
   z-index: 99;
 }
 
-.menu {
-  font-family: Caslon;
+.custom-menu {
   text-align: right;
-   position: relative;
-  width: 25% !important; /* Adjust as needed */
   float: right;
   display: inline-block;
   z-index: 99;
 }
 
-   #mav {
-      width: 30% !important;
-   }
-
-#nav p {
-  margin-right: 15px !important; /* Adjust as needed */
+.custom-menu p {
+  font-family: Caslon;
+  margin-right: 15px; /* Adjust as needed */
 }
 
 #gallery-container {
@@ -95,7 +89,7 @@ a:active {
 <body>
    <div class="topNav">
       <a href="/"><h1 id="name">MATTHEW THOMAS</h1></a>
-      <div id="nav">
+      <div class="custom-menu">
          <p class="menu hire">Hire</p>
          <p class="menu contact">Contact</p>
          <p class="menu about">About</p>
