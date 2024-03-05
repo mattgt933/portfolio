@@ -74,31 +74,39 @@ body {
   margin-right: 3%;
 }
 
-.Image {
-  width: 100%;
-  margin: 8px !important;   
-}
+      .Image {
+         width: 100%;
+         margin: 8px !important;   
+         transition: filter 0.3s;
+      }
 
-   .Image:hover {
-      cursor: hand;
-      filter: blur(5px);
-   }
+      .Image:hover {
+         filter: blur(5px);
+      }
 
-a:link {
-  color: black;
-}
+      a:link {
+         color: black;
+      }
 
-a:visited {
-  color: black;
-}
+      a:visited {
+         color: black;
+      }
 
-a:hover {
-  color: black;
-}
+      a:hover {
+         color: black;
+      }
 
-a:active {
-  color: black;
-}
+      a:active {
+         color: black;
+      }
+
+      .ImageContainer {
+         position: relative;
+      }
+
+      .ImageContainer:hover .Image {
+         filter: blur(5px);
+      }
 </style>
 </head>
 <body>
