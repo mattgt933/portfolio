@@ -43,13 +43,22 @@ body {
 .custom-menu {
   text-align: right;
   float: right;
-  display: inline-block;
+  display: flex;
+  align-items: center; /* Align items vertically in the flex container */
   z-index: 99;
 }
 
 .custom-menu p {
   font-family: Caslon;
   margin-right: 15px; /* Adjust as needed */
+}
+
+#nav {
+  position: fixed;
+  right: 35px;
+  top: 20px;
+  width: auto; /* Adjust as needed */
+  z-index: 99;
 }
 
 #gallery-container {
