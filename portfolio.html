@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+   @font-face { 
+     font-family: RC;
+     src: url('R&C-Demo.otf'); 
+   } 
+   
+   @font-face { 
+     font-family: Caslon;
+     src: url('LibreCaslonText-Regular.ttf'); 
+   } 
+   
+body {
+  background-color: #e6e6e6;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
+.topNav {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 80px;
+  backdrop-filter: blur(10px);
+  z-index: 99 !important;
+   background-color: rgba(177, 173, 158, .2);
+}
+
+#name {
+  font-family: RC;
+  position: fixed;
+  left: 35px;
+  top: 0px;
+  z-index: 99;
+}
+
+.custom-menu {
+  text-align: right;
+  float: right;
+  display: flex;
+  align-items: center; /* Align items vertically in the flex container */
+  z-index: 99;
+}
+
+.custom-menu p {
+  font-family: Caslon;
+   margin-top: 35px;
+  margin-right: 60px; /* Adjust as needed */
+}
+
+#nav {
+  position: fixed;
+  right: 35px;
+  top: 35px;
+  width: auto; /* Adjust as needed */
+  z-index: 99;
+}
+
+#gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 16px;
+  position: relative;
+  z-index: 2;
+  margin-top: 150px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+   #portfolio {
+font-family: RC;
+      width: 100%;
+      postition: relative;
+      left: 0px;
+      right: 0px;
+      text-align: center;
+      
+   }
+
+      .Image {
+         width: 100%;
+         margin: 8px !important;   
+      }
+
+
+      a:link {
+         color: black;
+      }
+
+      a:visited {
+         color: black;
+      }
+
+      a:hover {
+         color: black;
+      }
+
+      a:active {
+         color: black;
+      }
+</style>
+</head>
+<body>
+   <div class="topNav">
+      <a href="/"><h1 id="name">MATTHEW THOMAS</h1></a>
+      <div class="custom-menu">
+         <p class="menu portfolio">Portfolio</p>
+         <p class="menu about">About</p>
+         <p class="menu contact">Contact</p>
+         <p class="menu hire">Hire</p>
+      </div>
+   </div>
+
+   <div id="gallery-container">
+      <h1 id="portfolio">PORTFOLIO</h1>
+      <div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
+         <div class="w3-quarter">
+            <img src="_MG_0889-Enhanced-NR.jpg" alt="Image 5" class="Image">
+            <img src="IMG_7309.jpg" alt="Image 3" class="Image">
+            <img src="_MG_1292.jpg" alt="Image 7" class="Image">
+         </div>
+
+         <div class="w3-quarter">
+            <img src="-MG-6368.jpg" alt="Image 2" class="Image">
+            <img src="_MG_6204.jpg" alt="Image 8" class="Image">
+            <img src="_MG_0859.jpg" alt="Image 4" class="Image">
+         </div>
+
+         <div class="w3-quarter">
+            <img src="_MG_6258-Pano-2.jpg" alt="Image 9" class="Image">
+            <img src="_MG_1180.jpg" alt="Image 6" class="Image">
+            <img src="IMG_7278.jpg" alt="Image 11" class="Image">
+         </div>
+         <div class="w3-quarter">
+            <img src="Matthew.T.BookCoverJPG.jpg" alt="Image 1" class="Image">
+            <img src="_MG_6441.jpg" alt="Image 10" class="Image">
+            <img src="-MG-5908.jpg" alt="Image 1" class="Image">
+         </div>
+      </div>
+   </div>
+
+</body>
+</html>
