@@ -112,12 +112,12 @@
         }
 
         #image {
-            width: 100%;
+        width: 100%;
         }
 
         #text-container {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -128,7 +128,7 @@
 
         #sub-heading {
             font-size: 35px;
-            
+             white-space: nowrap;
         }
 
         .footer {
@@ -168,6 +168,29 @@
       }
 
         @media screen and (max-width: 880px) {
+        
+         #image-container {
+            position: relative;
+            display: flex;
+      	align-items: center;
+      	justify-content: center;
+      	height: 100vh;
+      	margin: 0;
+        }
+        
+        #image {
+        width: auto;
+		display: flex;
+      	align-items: center;
+      	justify-content: center;
+      	height: 100vh;
+      	margin: 0;
+        }
+        
+        #sub-heading {
+            font-size: 3.5vw;
+        }
+        
             .custom-menu {
             display: none;
         }
