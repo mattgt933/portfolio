@@ -49,6 +49,7 @@
             top: 0px;
             z-index: 99;
             color: #e6e6e6 !important;
+            white-space: nowrap;
         }
         
         .custom-menu {
@@ -63,11 +64,11 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 80px;
+        top: 100px;
         right: 0;
         width: 100%;
-        background-color: rgba(177, 173, 158, .2);
         backdrop-filter: blur(10px);
+        background-color: rgba(177, 173, 158, .2);
         text-decoration: none !important;
     }
 
@@ -100,7 +101,6 @@
         }
         
          .menuIcon {
-         selection: none;
          color: #e6e6e6;
          display: none;
             cursor: pointer;
@@ -125,12 +125,10 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
-        #main-heading {
-            font-size: 46px;
-        }
 
         #sub-heading {
-            font-size: 14px;
+            font-size: 35px;
+            
         }
 
         .footer {
@@ -173,6 +171,13 @@
             .custom-menu {
             display: none;
         }
+        
+        #name {
+        width: 100%;
+        left: 0px;
+        text-align: center;
+        padding: 0px;
+        }
 
         .custom-menu.active {
             display: flex;
@@ -182,12 +187,21 @@
             #nav {
                 display: block;
             }
+            
+            .topNav {
+            height: 100px;
+            }
 
             .menu-icon {
                 display: block;
             }
             
             .menuIcon {
+            width: 100%;
+            text-align: center;
+            position: fixed;
+        	top: 40px;
+        	right: 0;
             display: block;
             cursor: pointer;
             padding: 25px;
@@ -218,7 +232,6 @@
     <div id="image-container">
         <img src="https://matthewthomasportfolio.vercel.app/_MG_5963.jpg" id="image">
         <div id="text-container">
-            <h2 id="main-heading">Matthew Thomas</h2>
             <p id="sub-heading">PHOTOGRAPHER | VIDEOGRAPHER | EDITOR</p>
         </div>
     </div>
