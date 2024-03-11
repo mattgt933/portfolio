@@ -324,12 +324,15 @@ font-family: RC;
         menu.classList.toggle("active");
     }
 
-    function openModal(imgSrc) {
+   function openModal(imgSrc) {
   var modal = document.getElementById("myModal");
   var modalImg = document.getElementById("modalImage");
 
+  // Construct the path for the full-size image
+  var fullSizePath = 'fullsize/' + imgSrc;
+
   modal.style.display = "block";
-  modalImg.src = imgSrc;
+  modalImg.src = fullSizePath;
 }
 
 function closeModal() {
