@@ -132,6 +132,37 @@ font-family: RC;
       
    }
 
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80%;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
       .Image {
          width: 100%;
          margin: 8px !important;   
@@ -238,31 +269,39 @@ font-family: RC;
     <span class="w3-bar-item w3-right menuIcon" onclick="toggleMenu()">☰</span>
 </div>
 
+    <div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+
     <div id="gallery-container">
       <h1 id="portfolio">PORTFOLIO</h1>
       <div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
          <div class="w3-quarter">
-            <img src="book.jpg" alt="Image 5" class="Image">
-            <img src="IMG_7309.jpg" alt="Image 3" class="Image">
-            <img src="_MG_1292.jpg" alt="Image 7" class="Image">
-         </div>
+  <img src="book.jpg" alt="Image 5" class="Image" onclick="openModal('book.jpg')">
+  <img src="IMG_7309.jpg" alt="Image 3" class="Image" onclick="openModal('IMG_7309.jpg')">
+  <img src="_MG_1292.jpg" alt="Image 7" class="Image" onclick="openModal('_MG_1292.jpg')">
+</div>
 
-         <div class="w3-quarter">
-            <img src="-MG-6368.jpg" alt="Image 2" class="Image">
-            <img src="_MG_6204.jpg" alt="Image 8" class="Image">
-            <img src="_MG_0859.jpg" alt="Image 4" class="Image">
-         </div>
+<div class="w3-quarter">
+  <img src="-MG-6368.jpg" alt="Image 2" class="Image" onclick="openModal('-MG-6368.jpg')">
+  <img src="_MG_6204.jpg" alt="Image 8" class="Image" onclick="openModal('_MG_6204.jpg')">
+  <img src="_MG_0859.jpg" alt="Image 4" class="Image" onclick="openModal('_MG_0859.jpg')">
+</div>
 
-         <div class="w3-quarter">
-            <img src="_MG_6258-Pano-2.jpg" alt="Image 9" class="Image">
-            <img src="_MG_1180.jpg" alt="Image 6" class="Image">
-            <img src="IMG_7278.jpg" alt="Image 11" class="Image">
-         </div>
-         <div class="w3-quarter">
-            <img src="_MG_0889-Enhanced-NR.jpg" alt="Image 1" class="Image">
-            <img src="_MG_6441.jpg" alt="Image 10" class="Image">
-            <img src="-MG-5908.jpg" alt="Image 1" class="Image">
-         </div>
+<div class="w3-quarter">
+  <img src="_MG_6258-Pano-2.jpg" alt="Image 9" class="Image" onclick="openModal('_MG_6258-Pano-2.jpg')">
+  <img src="_MG_1180.jpg" alt="Image 6" class="Image" onclick="openModal('_MG_1180.jpg')">
+  <img src="IMG_7278.jpg" alt="Image 11" class="Image" onclick="openModal('IMG_7278.jpg')">
+</div>
+
+<div class="w3-quarter">
+  <img src="_MG_0889-Enhanced-NR.jpg" alt="Image 1" class="Image" onclick="openModal('_MG_0889-Enhanced-NR.jpg')">
+  <img src="_MG_6441.jpg" alt="Image 10" class="Image" onclick="openModal('_MG_6441.jpg')">
+  <img src="-MG-5908.jpg" alt="Image 1" class="Image" onclick="openModal('-MG-5908.jpg')">
+</div>
+
       </div>
    </div>
 
@@ -283,6 +322,19 @@ font-family: RC;
         var menu = document.getElementById("custom-menu");
         menu.classList.toggle("active");
     }
+
+    function openModal(imgSrc) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("modalImage");
+
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
 </script>
 </body>
 
