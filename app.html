@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background</title>
+    <style>
+    @font-face {
+            font-family: fette;
+            src: url('https://matthewthomasportfolio.vercel.app/DINEN_.TTF');
+        }
+        
+        :root {
+            --atem: #e64b3d;
+            --ptz: #ffa833;
+            --text-color: #ffffff;
+        }
+        
+        
+
+        .event {
+        font-family: fette;
+            width: 90%;
+            height: 275px;
+            padding: 20px;
+            border-radius: 15px; /* Adjust border radius as needed */
+        }
+        
+        .wcc {
+            background: linear-gradient(135deg, var(--atem), var(--ptz));
+            color: var(--text-color);
+        }
+
+        .event h1 {
+            font-size: 24px;
+            font-family: fette;
+            margin-bottom: 10px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .event hr {
+            margin: 10px 0;
+            border: 0;
+            border-top: 1px solid var(--text-color);
+            width: calc(25% - 8px); /* Adjust as needed */
+        }
+
+        .event p {
+            font-size: 18px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="event wcc">
+    <h1>Windsor Christian Church</h1>
+    <hr>
+    <p>VIDEO SWITCHING | VIDEO PTZ</p>
+    <p>3/24/2024 @ 3:00pm</p>
+</div>
+
+</body>
+</html>
