@@ -123,13 +123,17 @@ font-family: RC;
    }
 
 
-           /* Gallery Container */
+          /* Gallery Container */
 #gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width and ensure images are responsive */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
     gap: 16px; /* Space between grid items */
     padding: 16px;
     margin-top: 150px; /* Space from the top navigation */
+    width: calc(100% - 32px); /* Ensure full width minus padding */
+    max-width: 1200px; /* Optional: limit max width for large screens */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Gallery Item */
@@ -137,18 +141,17 @@ font-family: RC;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Ensure images don’t overflow their containers */
+    overflow: hidden;
+    position: relative; /* Position relative for potential overlay effects */
 }
 
 /* Image Styling */
 .w3-quarter img {
     width: 100%;
-    height: auto;
-    display: block; /* Remove any unwanted space below images */
-    object-fit: cover; /* Ensures the image covers the container without distortion */
-    border-radius: 4px; /* Optional: rounded corners for images */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensure image covers container without distortion */
+    display: block;
 }
-
         .w3-modal {
             display: none;
             position: fixed;
