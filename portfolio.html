@@ -110,17 +110,7 @@
              z-index: 100;
             }
 
-#gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 16px;
-  position: relative;
-  z-index: 2;
-  margin-top: 150px;
-  margin-left: 3%;
-  margin-right: 3%;
-}
+
 
    #portfolio {
 font-family: RC;
@@ -133,7 +123,25 @@ font-family: RC;
    }
 
 
-               .w3-quarter img {
+             /* Gallery Container */
+#gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 16px;
+    margin-top: 150px; /* Ensure there's enough space from the top navigation */
+}
+
+/* Gallery Item */
+.w3-quarter {
+    padding: 8px; /* Space around each image */
+    box-sizing: border-box;
+    /* Optional: If you want a border around each image */
+    /* border: 1px solid #ddd; */
+}
+
+/* Image Styling */
+.w3-quarter img {
     width: 100%;
     height: auto;
     display: block; /* Remove any unwanted space below images */
