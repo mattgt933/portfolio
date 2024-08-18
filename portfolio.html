@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,343 +8,142 @@
     <meta name="author" content="Matthew Thomas">
     <title>Matthew Thomas</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+    
+    <!-- Custom Fonts -->
     <style>
         @font-face {
-            font-family: RC;
-            src: url('https://matthewthomasportfolio.vercel.app/R&C-Demo.otf');
+            font-family: 'RC';
+            src: url('https://matthewthomasportfolio.vercel.app/R&C-Demo.otf') format('opentype');
         }
 
         @font-face {
-            font-family: Caslon;
-            src: url('https://matthewthomasportfolio.vercel.app/LibreCaslonText-Regular.ttf');
+            font-family: 'Caslon';
+            src: url('https://matthewthomasportfolio.vercel.app/LibreCaslonText-Regular.ttf') format('truetype');
         }
 
         body {
-            background-color: #e6e6e6;
-            color: #000000;
+            font-family: 'RC', sans-serif;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
         }
 
-        .topNav {
-            position: fixed;
-            left: 0px;
-            top: 0px;
-            right: 0px;
+        #portfolio {
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Caslon', serif;
+        }
+
+        .w3-quarter img {
             width: 100%;
-            height: 80px;
-           backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 99 !important;
-            background-color: rgba(177, 173, 158, .2);
-            color: #000;
-        }
-
-        #name {
-            font-family: RC;
-            position: fixed;
-            left: 35px;
-            top: 0px;
-            z-index: 99;
-            color: #000 !important;
-            white-space: nowrap;
-        }
-        
-        .custom-menu {
-        text-align: right;
-        float: right;
-        display: flex;
-        align-items: center;
-        z-index: 99;
-    }
-
-    .custom-menu.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        right: 0;
-        width: 100%;
-       backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        background-color: rgba(177, 173, 158, .2);
-        text-decoration: none !important;
-    }
-
-        .custom-menu a {
-            text-decoration: none !important;
-            color: #000;
-        }
-
-        .custom-menu p {
-            font-family: Caslon;
-            margin-top: 35px;
-            margin-right: 60px;
-            color: #000;
-        }
-        
-        
-
-        #nav {
-            position: fixed;
-            right: 15px;
-            top: 35px;
-            width: auto;
-            z-index: 99;
-            display: none;
-        }
-
-        .menu-icon {
-            display: none;
+            height: auto;
             cursor: pointer;
         }
-        
-         .menuIcon {
-         color: #000;
-         display: none;
-            cursor: pointer;
-            padding: 25px;
-             z-index: 100;
-            }
-
-#gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 16px;
-  position: relative;
-  z-index: 2;
-  margin-top: 150px;
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
-   #portfolio {
-font-family: RC;
-      width: 100%;
-      postition: relative;
-      left: 0px;
-      right: 0px;
-      text-align: center;
-      
-   }
-
-        .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-    position: fixed;
-    margin: auto;
-    display: block;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 90%; /* Adjust the max-height as needed */
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: #fff;
-    font-size: 25px;
-    font-weight: bold;
-    cursor: pointer;
-}
-      .Image {
-         width: 100%;
-         margin: 8px !important;   
-      }
-
 
         .footer {
-            background-color: rgba(177, 173, 158);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            position: relative;
-            width: 100%;
-        }
-
-        #c {
-            font-size: 13px;
-        }
-
-        a:link,
-        a:visited,
-        a:hover,
-        a:active {
-            color: white;
-        }
-        
-          .footer a:link {
-         color: white;
-      }
-
-      .footer a:visited {
-         color: white;
-      }
-
-      .footer a:hover {
-         color: white;
-      }
-
-      .footer a:active {
-         color: white;
-      }
-
-        @media screen and (max-width: 880px) {
-        
-            .custom-menu {
-            display: none;
-        }
-        
-        #name {
-        width: 100%;
-        left: 0px;
-        text-align: center;
-        padding: 0px;
-        }
-
-        .custom-menu.active {
-            display: flex;
-            text-decoration: none !important;
-        }
-
-            #nav {
-                display: block;
-            }
-            
-            .topNav {
-            height: 100px;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-            
-            .menuIcon {
-            width: 100%;
+            background-color: #f1f1f1;
+            padding: 10px;
             text-align: center;
             position: fixed;
-        	top: 40px;
-        	right: 0;
-            display: block;
+            width: 100%;
+            bottom: 0;
+            font-family: 'Caslon', serif;
+        }
+
+        .w3-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .w3-modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .w3-closebtn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .w3-closebtn:hover,
+        .w3-closebtn:focus {
+            color: black;
+            text-decoration: none;
             cursor: pointer;
-            padding: 25px;
-            }
-            
-            .custom-menu.active p {
-                margin: 0;
-                padding: 10px;
-                text-align: center;
-                text-decoration: none !important;
-            }
+        }
+
+        #modalImage {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
-
 <body>
-   <div class="topNav">
-    <a href="/"><h1 id="name">MATTHEW THOMAS</h1></a>
-    <div class="custom-menu" id="custom-menu">
-         <a href="portfolio.html"><p class="menu portfolio">Portfolio</p></a>
-        <a href="about.html"><p class="menu about">About</p></a>
-        <a href="contact.html"><p class="menu contact">Contact</p></a>
-        <a href="hire.html"><p class="menu hire">Hire</p></a>
-    </div>
-    </div>
-    <span class="w3-bar-item w3-right menuIcon" onclick="toggleMenu()">☰</span>
-</div>
-
-    <div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImage">
-</div>
-
-
     <div id="gallery-container">
-      <h1 id="portfolio">PORTFOLIO</h1>
-      <div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
-         <div class="w3-quarter">
-  <img src="book.jpg" alt="Image 5" class="Image" onclick="openModal('book.jpg')">
-             <img src="IMG_9936-Enhanced-NR (Medium).jpg" alt="Image 3" class="Image" onclick="openModal('IMG_9936-Enhanced-NR.jpg')">
-  <img src="IMG_7309.jpg" alt="Image 3" class="Image" onclick="openModal('IMG_7309.jpg')">
-  <img src="_MG_1292.jpg" alt="Image 7" class="Image" onclick="openModal('_MG_1292.jpg')">
-</div>
+        <h1 id="portfolio">PORTFOLIO</h1>
+        <div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
+            <!-- Images will be injected here -->
+        </div>
+    </div>
 
-<div class="w3-quarter">
-  <img src="-MG-6368.jpg" alt="Image 2" class="Image" onclick="openModal('-MG-6368.jpg')">
-    <img src="IMG_8802-Enhanced-NR (Medium).jpg" alt="Image 3" class="Image" onclick="openModal('IMG_8802-Enhanced-NR.jpg')">
-  <img src="_MG_6204.jpg" alt="Image 8" class="Image" onclick="openModal('_MG_6204.jpg')">
-  <img src="_MG_0859.jpg" alt="Image 4" class="Image" onclick="openModal('_MG_0859.jpg')">
-    <img src="IMG_8602-Enhanced-NR (Medium).jpg" alt="Image 3" class="Image" onclick="openModal('IMG_8602-Enhanced-NR.jpg')">
-</div>
-
-<div class="w3-quarter">
-  <img src="_MG_6258-Pano-2.jpg" alt="Image 9" class="Image" onclick="openModal('_MG_6258-Pano-2.jpg')">
-  <img src="_MG_1180.jpg" alt="Image 6" class="Image" onclick="openModal('_MG_1180.jpg')">
-  <img src="IMG_7278.jpg" alt="Image 11" class="Image" onclick="openModal('IMG_7278.jpg')">
-    <img src="IMG_8966-Enhanced-NR (Medium).jpg" alt="Image 3" class="Image" onclick="openModal('IMG_8966-Enhanced-NR.jpg')">
-</div>
-
-<div class="w3-quarter">
-    <img src="IMG_8887-Enhanced-NR (Medium).jpg" alt="Image 3" class="Image" onclick="openModal('IMG_8887-Enhanced-NR.jpg')">
-  <img src="_MG_0889-Enhanced-NR.jpg" alt="Image 1" class="Image" onclick="openModal('_MG_0889-Enhanced-NR.jpg')">
-  <img src="_MG_6441.jpg" alt="Image 10" class="Image" onclick="openModal('_MG_6441.jpg')">
-  <img src="-MG-5908.jpg" alt="Image 1" class="Image" onclick="openModal('-MG-5908.jpg')">
-</div>
-
-      </div>
-   </div>
-
+    <!-- Modal -->
+    <div id="myModal" class="w3-modal">
+        <div class="w3-modal-content">
+            <span class="w3-closebtn" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Full Size Image">
+        </div>
+    </div>
 
     <div class="footer">
-        Custom website by Matthew Thomas |
-        <a href="/">Home</a> |
-        <a href="portfolio.html">Portfolio</a> |
-        <a href="about.html">About</a> |
-        <a href="contact.html">Contact</a> |
-        <a href="hire.html">Hire</a> |
-        <a href="tos.html">Terms of Service</a><br>
-        <p id="c">&copy; 2024 Matthew Thomas</p>
+        <p>© 2024 Matthew Thomas. All rights reserved.</p>
     </div>
 
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById("custom-menu");
-        menu.classList.toggle("active");
-    }
+    <script>
+        function loadImages() {
+            fetch('images.json')
+                .then(response => response.json())
+                .then(data => {
+                    const galleryContainer = document.getElementById('myGrid');
+                    data.images.forEach(imgSrc => {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = `images/${imgSrc}`;
+                        imgElement.alt = imgSrc;
+                        imgElement.className = 'w3-image';
+                        imgElement.onclick = () => openModal(imgSrc);
+                        const colDiv = document.createElement('div');
+                        colDiv.className = 'w3-quarter';
+                        colDiv.appendChild(imgElement);
+                        galleryContainer.appendChild(colDiv);
+                    });
+                });
+        }
 
-   function openModal(imgSrc) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("modalImage");
+        function openModal(imgSrc) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImage");
+            var fullSizePath = 'images/fullsize/' + imgSrc;
+            modalImg.src = fullSizePath;
+            modal.style.display = "block";
+        }
 
-  // Construct the path for the full-size image
-  var fullSizePath = 'fullsize/' + imgSrc;
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
 
-  modalImg.src = fullSizePath;
-       modal.style.display = "block";
-  
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-</script>
+        document.addEventListener('DOMContentLoaded', loadImages);
+    </script>
 </body>
-
 </html>
