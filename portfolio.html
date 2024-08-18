@@ -123,21 +123,20 @@ font-family: RC;
    }
 
 
-             /* Gallery Container */
+           /* Gallery Container */
 #gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with flexible column sizes */
+    gap: 16px; /* Space between grid items */
     padding: 16px;
-    margin-top: 150px; /* Ensure there's enough space from the top navigation */
+    margin-top: 150px; /* Space from the top navigation */
 }
 
 /* Gallery Item */
 .w3-quarter {
-    padding: 8px; /* Space around each image */
-    box-sizing: border-box;
-    /* Optional: If you want a border around each image */
-    /* border: 1px solid #ddd; */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
 /* Image Styling */
@@ -145,7 +144,7 @@ font-family: RC;
     width: 100%;
     height: auto;
     display: block; /* Remove any unwanted space below images */
-    cursor: pointer;
+    border-radius: 4px; /* Optional: rounded corners for images */
 }
 
 
