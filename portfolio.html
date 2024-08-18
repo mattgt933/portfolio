@@ -126,7 +126,7 @@ font-family: RC;
            /* Gallery Container */
 #gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with flexible column sizes */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width and ensure images are responsive */
     gap: 16px; /* Space between grid items */
     padding: 16px;
     margin-top: 150px; /* Space from the top navigation */
@@ -135,8 +135,9 @@ font-family: RC;
 /* Gallery Item */
 .w3-quarter {
     display: flex;
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure images don’t overflow their containers */
 }
 
 /* Image Styling */
@@ -144,9 +145,9 @@ font-family: RC;
     width: 100%;
     height: auto;
     display: block; /* Remove any unwanted space below images */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
     border-radius: 4px; /* Optional: rounded corners for images */
 }
-
 
         .w3-modal {
             display: none;
