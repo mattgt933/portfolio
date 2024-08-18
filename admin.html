@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .editor-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        textarea {
+            width: 100%;
+            height: 400px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .message {
+            margin: 10px 0;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-container">
+        <h1>Edit HTML Content</h1>
+        <div id="message" class="message"></div>
+        <form id="editorForm">
+            <textarea id="htmlContent"></textarea>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.getElementById('htmlContent');
+            const message = document.getElementById('message');
+            
+            // Load content from localStorage
+            const savedContent = localStorage.getItem('htmlContent');
+            if (savedContent) {
+                textarea.value = savedContent;
+            }
+
+            // Save content to localStorage on form submit
+            document.getElementById('editorForm').addEventListener('submit', (event) => {
+                event.preventDefault();
+                localStorage.setItem('htmlContent', textarea.value);
+                message.textContent = 'File saved successfully!';
+            });
+        });
+    </script>
+</body>
+</html>
