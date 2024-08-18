@@ -118,7 +118,7 @@
                     const galleryContainer = document.getElementById('myGrid');
                     data.images.forEach(imgSrc => {
                         const imgElement = document.createElement('img');
-                        imgElement.src = `images/${imgSrc}`;
+                        imgElement.src = `${imgSrc}`;
                         imgElement.alt = imgSrc;
                         imgElement.className = 'w3-image';
                         imgElement.onclick = () => openModal(imgSrc);
@@ -133,7 +133,7 @@
         function openModal(imgSrc) {
             var modal = document.getElementById("myModal");
             var modalImg = document.getElementById("modalImage");
-            var fullSizePath = 'images/fullsize/' + imgSrc;
+            var fullSizePath = 'fullsize/' + imgSrc;
             modalImg.src = fullSizePath;
             modal.style.display = "block";
         }
