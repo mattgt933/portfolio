@@ -128,28 +128,27 @@ font-family: RC;
     padding: 16px;
     margin-top: 150px; /* Space from the top navigation */
     width: calc(100% - 32px); /* Ensure full width minus padding */
-    max-width: 90%; /* Optional: limit max width for large screens */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 /* Gallery Item */
 .w3-quarter {
-    flex: 0 1 calc(20% - 16px); /* Make sure items take up 20% of the container's width minus margins */
+    width: 20%; /* Adjust width as needed */
+    height: 20vw; /* Adjust height as needed */
     margin: 8px; /* Space between images */
     display: inline-block;
-    position: relative; /* Position relative for potential overlay effects */
     overflow: hidden;
+    position: relative; /* Position relative for potential overlay effects */
+    vertical-align: top; /* Align top to maintain a consistent layout */
 }
 
 /* Image Styling */
 .w3-quarter img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
