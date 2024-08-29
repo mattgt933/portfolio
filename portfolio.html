@@ -132,35 +132,24 @@ font-family: RC;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Gallery Item */
 .w3-quarter {
-    width: 20%; /* Adjust width as needed */
+    flex: 0 1 calc(20% - 16px); /* Make sure items take up 20% of the container's width minus margins */
     margin: 8px; /* Space between images */
     display: inline-block;
-    overflow: hidden;
     position: relative; /* Position relative for potential overlay effects */
-    vertical-align: top; /* Align top to maintain a consistent layout */
+    overflow: hidden;
 }
 
 /* Image Styling */
 .w3-quarter img {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
-    display: block;
-}
-
-/* Make sure images are centered within the container */
-.w3-quarter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.w3-quarter img {
-    max-width: 100%;
-    height: auto;
     display: block;
 }
 
@@ -172,6 +161,7 @@ font-family: RC;
     border: 1px solid #888;
     width: 80%;
 }
+
         .w3-modal {
             display: none;
             position: fixed;
