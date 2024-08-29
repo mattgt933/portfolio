@@ -319,7 +319,7 @@ font-family: RC;
                     const galleryContainer = document.getElementById('myGrid');
                     data.images.forEach(imgSrc => {
                         const imgElement = document.createElement('img');
-                        imgElement.src = ${imgSrc};
+                        imgElement.src = imgSrc;
                         imgElement.alt = imgSrc;
                         imgElement.className = 'w3-image';
                         imgElement.onclick = () => openModal(imgSrc);
