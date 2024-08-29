@@ -125,12 +125,10 @@ font-family: RC;
 
 /* Gallery Container */
 #gallery-container {
+    margin: 150px auto 0 auto; /* Center the container horizontally */
     padding: 16px;
-    margin-top: 150px; /* Space from the top navigation */
     width: calc(100% - 32px); /* Ensure full width minus padding */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    max-width: 90%; /* Optional: limit max width for large screens */
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center the items */
@@ -139,19 +137,20 @@ font-family: RC;
 
 /* Gallery Item */
 .w3-quarter {
-    width: 20%; /* Adjust width as needed */
-    height: 20vw; /* Adjust height as needed */
-    margin: 8px; /* Space between images */
-    display: inline-block;
+    width: calc(25% - 16px); /* 25% width minus the margin */
+    height: auto;
+    margin: 8px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
     overflow: hidden;
-    position: relative; /* Position relative for potential overlay effects */
-    vertical-align: top; /* Align top to maintain a consistent layout */
+    position: relative;
 }
 
 /* Image Styling */
 .w3-quarter img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
 }
