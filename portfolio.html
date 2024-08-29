@@ -122,38 +122,47 @@ font-family: RC;
       
    }
 
+
 /* Gallery Container */
 #gallery-container {
-    margin: 150px auto 0 auto; /* Center the container horizontally */
     padding: 16px;
+    margin-top: 150px; /* Space from the top navigation */
     width: calc(100% - 32px); /* Ensure full width minus padding */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the columns */
+    justify-content: center; /* Center the items */
     align-items: flex-start; /* Align items at the top */
-    flex-direction: column; /* Display items as columns */
 }
 
-/* Gallery Column */
-.gallery-column {
-    flex: 1; /* Allow the column to grow and fill space */
-    margin: 8px;
-    display: flex;
-    flex-direction: column; /* Display images vertically */
-    justify-content: flex-start;
+/* Gallery Item */
+.w3-quarter {
+    width: 20%; /* Adjust width as needed */
+    height: 20vw; /* Adjust height as needed */
+    margin: 8px; /* Space between images */
+    display: inline-block;
+    overflow: hidden;
+    position: relative; /* Position relative for potential overlay effects */
+    vertical-align: top; /* Align top to maintain a consistent layout */
 }
 
 /* Image Styling */
-.w3-quarter {
-    width: 100%; /* Full width of the column */
-    margin-bottom: 16px; /* Space between images */
-}
-
 .w3-quarter img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Adjustments for Modal */
+.w3-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
 }
 
         .w3-modal {
@@ -291,61 +300,39 @@ font-family: RC;
 
         <div id="gallery-container">
         <h1 id="portfolio">PORTFOLIO</h1>
-      <div class="w3-row-padding" id="gallery-container" style="margin-bottom:128px">
-    <!-- Images will be injected here -->
-    </div>
+        <div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
+            <!-- Images will be injected here -->
+        </div>
     </div>
 
-
-<!-- Modal -->
-<div id="myModal" class="w3-modal">
-    <div class="w3-modal-content">
-        <span class="w3-closebtn" onclick="closeModal()">&times;</span>
-        <img id="modalImage" src="" alt="Full Size Image">
+    <!-- Modal -->
+    <div id="myModal" class="w3-modal">
+        <div class="w3-modal-content">
+            <span class="w3-closebtn" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Full Size Image">
+        </div>
     </div>
-</div>
 
     <script>
         function loadImages() {
-    fetch('images.json')
-        .then(response => response.json())
-        .then(data => {
-            const galleryContainer = document.getElementById('myGrid');
+            fetch('images.json')
+                .then(response => response.json())
+                .then(data => {
+                    const galleryContainer = document.getElementById('myGrid');
+                    data.images.forEach(imgSrc => {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = ${imgSrc};
+                        imgElement.alt = imgSrc;
+                        imgElement.className = 'w3-image';
+                        imgElement.onclick = () => openModal(imgSrc);
+                        const colDiv = document.createElement('div');
+                        colDiv.className = 'w3-quarter';
+                        colDiv.appendChild(imgElement);
+                        galleryContainer.appendChild(colDiv);
+                    });
+                });
+        }
 
-            // Create columns
-            const col1 = document.createElement('div');
-            col1.className = 'gallery-column';
-            const col2 = document.createElement('div');
-            col2.className = 'gallery-column';
-            const col3 = document.createElement('div');
-            col3.className = 'gallery-column';
-
-            data.images.forEach((imgSrc, index) => {
-                const imgElement = document.createElement('img');
-                imgElement.src = `${imgSrc}`;
-                imgElement.alt = imgSrc;
-                imgElement.className = 'w3-image';
-                imgElement.onclick = () => openModal(imgSrc);
-
-                const colDiv = document.createElement('div');
-                colDiv.className = 'w3-quarter';
-                colDiv.appendChild(imgElement);
-
-                // Distribute images across columns
-                if (index % 3 === 0) {
-                    col1.appendChild(colDiv);
-                } else if (index % 3 === 1) {
-                    col2.appendChild(colDiv);
-                } else {
-                    col3.appendChild(colDiv);
-                }
-            });
-
-            galleryContainer.appendChild(col1);
-            galleryContainer.appendChild(col2);
-            galleryContainer.appendChild(col3);
-        });
-}
         function openModal(imgSrc) {
             var modal = document.getElementById("myModal");
             var modalImg = document.getElementById("modalImage");
@@ -375,10 +362,11 @@ font-family: RC;
     </div>
 
 <script>
-     function toggleMenu() {
+    function toggleMenu() {
         var menu = document.getElementById("custom-menu");
         menu.classList.toggle("active");
     }
+}
 </script>
 </body>
 
