@@ -134,27 +134,30 @@ font-family: RC;
     align-items: flex-start; /* Align items at the top */
 }
 
+/* Gallery Container */
+#myGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+    gap: 16px; /* Space between items */
+}
+
 /* Gallery Item */
 .w3-quarter {
-    width: calc(25%- 16px); /* 25% width minus the margin */
-    height: calc(15vw - 16px);
-    margin: 8px;
-    padding: 0px !important;
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    flex: 1 1 calc(25% - 16px); /* Make each item 25% of the container width, accounting for gap */
+    max-width: calc(25% - 16px); /* Ensure item doesn't exceed 25% width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 8px; /* Margin for spacing */
     overflow: hidden;
     position: relative;
-    border-radius: 15px;
 }
 
 /* Image Styling */
 .w3-quarter img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container without distortion */
     display: block;
-    border-radius: 15px;
 }
 
 /* Adjustments for Modal */
