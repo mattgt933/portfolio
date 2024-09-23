@@ -335,54 +335,8 @@ font-family: RC;
 
         <div id="gallery-container">
         <h1 id="portfolio">PORTFOLIO</h1>
-        <div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
-            <!-- Images will be injected here -->
-        </div>
+       <iframe href="https://matthewthomas.pixieset.com/">
     </div>
-
-    <!-- Modal -->
-    <div id="myModal" class="w3-modal">
-        <div class="w3-modal-content">
-            <span class="w3-closebtn" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Full Size Image">
-        </div>
-    </div>
-
-    <script>
-        function loadImages() {
-            fetch('images.json')
-                .then(response => response.json())
-                .then(data => {
-                    const galleryContainer = document.getElementById('myGrid');
-                    data.images.forEach(imgSrc => {
-                        const imgElement = document.createElement('img');
-                        imgElement.src = imgSrc;
-                        imgElement.alt = imgSrc;
-                        imgElement.className = 'w3-image';
-                        imgElement.onclick = () => openModal(imgSrc);
-                        const colDiv = document.createElement('div');
-                        colDiv.className = 'w3-quarter';
-                        colDiv.appendChild(imgElement);
-                        galleryContainer.appendChild(colDiv);
-                    });
-                });
-        }
-
-        function openModal(imgSrc) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("modalImage");
-            var fullSizePath = 'fullsize/' + imgSrc;
-            modalImg.src = fullSizePath;
-            modal.style.display = "block";
-        }
-
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
-
-        document.addEventListener('DOMContentLoaded', loadImages);
-    </script>
 
 
     <div class="footer">
