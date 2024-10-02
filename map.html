@@ -23,15 +23,19 @@
         prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/images/",
         tileSources: {
             type: 'image',
-            url: 'https://media.githubusercontent.com/media/mattgt933/portfolio/main/VBC%20Whole%20Camp-orthomosaic.jpg',  // Replace this with your actual image path
-            buildPyramid: false  // Use this if you're not generating tiles
+            url: 'https://media.githubusercontent.com/media/mattgt933/portfolio/main/VBC%20Whole%20Camp-orthomosaic.jpg',
+            buildPyramid: false  // Keep this false to avoid tiling issues
         },
-        showNavigator: true,
-        defaultZoomLevel: 0,  // Ensure it starts zoomed out
-        minZoomLevel: 0.5,    // Allow a wider zoom range if needed
-        maxZoomLevel: 10
+        immediateRender: true,   // Render as soon as possible
+        visibilityRatio: 1,      // Ensures full image is visible before rendering
+        blendTime: 0,            // No delay in rendering tiles
+        minZoomLevel: 0.1,       // Allow full zoom out
+        maxZoomLevel: 20,        // Allow deeper zoom
+        defaultZoomLevel: 0,     // Ensure initial view is zoomed out
+        showNavigator: true
     });
 </script>
+
 
 </body>
 </html>
