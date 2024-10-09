@@ -224,11 +224,7 @@
     // Grant CesiumJS access to your ion assets
 Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0NWEzYWQ1NS1mY2RkLTQ1ODItYTRlOC1kMTFkNjY4NTA1MTAiLCJpZCI6MjQ2OTkzLCJpYXQiOjE3Mjg1MDk0NTN9.0EU4uj6OVOx0IKQec2P3WoGr6BjTjwD7zyOBadL-k3M";
 
-const viewer = new Cesium.Viewer("cesiumContainer", {
-  terrainProvider: await Cesium.CesiumTerrainProvider.fromIonAssetId(
-    1,
-  ),
-});
+const viewer = new Cesium.Viewer("cesiumContainer", {terrainProvider: await Cesium.CesiumTerrainProvider.fromIonAssetId(1, ),});
 viewer.scene.globe.depthTestAgainstTerrain = true;
 
 try {
