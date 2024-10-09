@@ -226,9 +226,11 @@
 
     (async () => {
         const viewer = new Cesium.Viewer("cesiumContainer", {
-            terrainProvider: await Cesium.CesiumTerrainProvider.fromIonAssetId(1),  // Cesium World Terrain
-        });
-        viewer.scene.globe.depthTestAgainstTerrain = true;
+  terrainProvider: await Cesium.CesiumTerrainProvider.fromIonAssetId(
+    1,
+  ),
+});
+viewer.scene.globe.depthTestAgainstTerrain = true;
 
         try {
             // Load your 3D Tileset (with texture)
