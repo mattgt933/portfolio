@@ -9,7 +9,7 @@
     <meta name="author" content="Matthew Thomas">
     <title>Matthew Thomas</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.103/Build/Cesium/Cesium.js"></script>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.103/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.103/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 
     <style>
@@ -38,7 +38,7 @@
             right: 0px;
             width: 100%;
             height: 80px;
-           backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             z-index: 99 !important;
             background-color: rgba(177, 173, 158, .2);
@@ -54,27 +54,27 @@
             color: #000 !important;
             white-space: nowrap;
         }
-        
-        .custom-menu {
-        text-align: right;
-        float: right;
-        display: flex;
-        align-items: center;
-        z-index: 99;
-    }
 
-    .custom-menu.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        right: 0;
-        width: 100%;
-       backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        background-color: rgba(177, 173, 158, .2);
-        text-decoration: none !important;
-    }
+        .custom-menu {
+            text-align: right;
+            float: right;
+            display: flex;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .custom-menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100px;
+            right: 0;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(177, 173, 158, .2);
+            text-decoration: none !important;
+        }
 
         .custom-menu a {
             text-decoration: none !important;
@@ -87,8 +87,6 @@
             margin-right: 60px;
             color: #000;
         }
-        
-        
 
         #nav {
             position: fixed;
@@ -103,23 +101,21 @@
             display: none;
             cursor: pointer;
         }
-        
-         .menuIcon {
-         color: #000;
-         display: none;
+
+        .menuIcon {
+            color: #000;
+            display: none;
             cursor: pointer;
             padding: 25px;
-             z-index: 100;
-            }
+            z-index: 100;
+        }
 
-
-         #cesiumContainer {
+        #cesiumContainer {
             width: 100%;
             height: 100vh;
             margin: 0;
             padding: 0;
         }
-
 
         .footer {
             background-color: rgba(177, 173, 158);
@@ -140,64 +136,63 @@
         a:active {
             color: white;
         }
-        
-          .footer a:link {
-         color: white;
-      }
 
-      .footer a:visited {
-         color: white;
-      }
+        .footer a:link {
+            color: white;
+        }
 
-      .footer a:hover {
-         color: white;
-      }
+        .footer a:visited {
+            color: white;
+        }
 
-      .footer a:active {
-         color: white;
-      }
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer a:active {
+            color: white;
+        }
 
         @media screen and (max-width: 880px) {
-        
             .custom-menu {
-            display: none;
-        }
-        
-        #name {
-        width: 100%;
-        left: 0px;
-        text-align: center;
-        padding: 0px;
-        }
+                display: none;
+            }
 
-        .custom-menu.active {
-            display: flex;
-            text-decoration: none !important;
-        }
+            #name {
+                width: 100%;
+                left: 0px;
+                text-align: center;
+                padding: 0px;
+            }
+
+            .custom-menu.active {
+                display: flex;
+                text-decoration: none !important;
+            }
 
             #nav {
                 display: block;
             }
-            
+
             .topNav {
-            height: 100px;
+                height: 100px;
             }
 
             .menu-icon {
                 display: block;
             }
-            
+
             .menuIcon {
-            width: 100%;
-            text-align: center;
-            position: fixed;
-        	top: 40px;
-        	right: 0;
-            display: block;
-            cursor: pointer;
-            padding: 25px;
+                width: 100%;
+                text-align: center;
+                position: fixed;
+                top: 40px;
+                right: 0;
+                display: block;
+                cursor: pointer;
+                padding: 25px;
             }
-            
+
             .custom-menu.active p {
                 margin: 0;
                 padding: 10px;
@@ -209,42 +204,50 @@
 </head>
 
 <body>
-   <div class="topNav">
-    <a href="/"><h1 id="name">MATTHEW THOMAS</h1></a>
-    <div class="custom-menu" id="custom-menu">
-         <a href="portfolio.html"><p class="menu portfolio">Portfolio</p></a>
-        <a href="about.html"><p class="menu about">About</p></a>
-        <a href="contact.html"><p class="menu contact">Contact</p></a>
-        <a href="hire.html"><p class="menu hire">Hire</p></a>
+    <div class="topNav">
+        <a href="/"><h1 id="name">MATTHEW THOMAS</h1></a>
+        <div class="custom-menu" id="custom-menu">
+            <a href="portfolio.html"><p class="menu portfolio">Portfolio</p></a>
+            <a href="about.html"><p class="menu about">About</p></a>
+            <a href="contact.html"><p class="menu contact">Contact</p></a>
+            <a href="hire.html"><p class="menu hire">Hire</p></a>
+        </div>
+        <span class="w3-bar-item w3-right menuIcon" onclick="toggleMenu()">☰</span>
     </div>
-    <span class="w3-bar-item w3-right menuIcon" onclick="toggleMenu()">☰</span>
-</div>
-<div id="cesiumContainer"></div>
-<script>
-    // Grant CesiumJS access to your ion assets
-Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0NWEzYWQ1NS1mY2RkLTQ1ODItYTRlOC1kMTFkNjY4NTA1MTAiLCJpZCI6MjQ2OTkzLCJpYXQiOjE3Mjg1MDk0NTN9.0EU4uj6OVOx0IKQec2P3WoGr6BjTjwD7zyOBadL-k3M";
+    <div id="cesiumContainer"></div>
+    <script>
+        async function initializeCesium() {
+            Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0NWEzYWQ1NS1mY2RkLTQ1ODItYTRlOC1kMTFkNjY4NTA1MTAiLCJpZCI6MjQ2OTkzLCJpYXQiOjE3Mjg1MDk0NTN9.0EU4uj6OVOx0IKQec2P3WoGr6BjTjwD7zyOBadL-k3M"; // Replace with your actual access token
 
-const viewer = new Cesium.Viewer("cesiumContainer", {terrainProvider: await Cesium.CesiumTerrainProvider.fromIonAssetId(1)});
-viewer.scene.globe.depthTestAgainstTerrain = true;
+            const viewer = new Cesium.Viewer("cesiumContainer", {
+                terrainProvider: new Cesium.CesiumTerrainProvider({
+                    url: Cesium.Ion.resourceUrl("//cesiumjs/terrain"),
+                }),
+            });
 
-try {
-  const tileset = await Cesium.Cesium3DTileset.fromIonAssetId(2765098);
-  viewer.scene.primitives.add(tileset);
-  await viewer.zoomTo(tileset);
+            viewer.scene.globe.depthTestAgainstTerrain = true;
 
-  // Apply the default style if it exists
-  const extras = tileset.asset.extras;
-  if (
-    Cesium.defined(extras) &&
-    Cesium.defined(extras.ion) &&
-    Cesium.defined(extras.ion.defaultStyle)
-  ) {
-    tileset.style = new Cesium.Cesium3DTileStyle(extras.ion.defaultStyle);
-  }
-} catch (error) {
-  console.log(error);
-}
-</script>
+            try {
+                const tileset = await Cesium.Cesium3DTileset.fromIonAssetId(2765098);
+                viewer.scene.primitives.add(tileset);
+                await viewer.zoomTo(tileset);
+
+                const extras = tileset.asset.extras;
+                if (
+                    Cesium.defined(extras) &&
+                    Cesium.defined(extras.ion) &&
+                    Cesium.defined(extras.ion.defaultStyle)
+                ) {
+                    tileset.style = new Cesium.Cesium3DTileStyle(extras.ion.defaultStyle);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        // Call the initialization function
+        initializeCesium();
+    </script>
 
 </body>
 </html>
