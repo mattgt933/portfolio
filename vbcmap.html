@@ -212,35 +212,31 @@
     <span class="w3-bar-item w3-right menuIcon" onclick="toggleMenu()">☰</span>
 </div>
 
-<script id="cesium_sandcastle_script">
-    window.startup = async function (Cesium) {
-        'use strict';
-        Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0NWEzYWQ1NS1mY2RkLTQ1ODItYTRlOC1kMTFkNjY4NTA1MTAiLCJpZCI6MjQ2OTkzLCJpYXQiOjE3Mjg1MDk0NTN9.0EU4uj6OVOx0IKQec2P3WoGr6BjTjwD7zyOBadL-k3M";
+<script>
+    // Set up CesiumJS with your ion token
+    Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0NWEzYWQ1NS1mY2RkLTQ1ODItYTRlOC1kMTFkNjY4NTA1MTAiLCJpZCI6MjQ2OTkzLCJpYXQiOjE3Mjg1MDk0NTN9.0EU4uj6OVOx0IKQec2P3WoGr6BjTjwD7zyOBadL-k3M";
 
-        // Create the viewer with a default terrain provider
+    (async () => {
         const viewer = new Cesium.Viewer("cesiumContainer", {
-            terrainProvider: new Cesium.CesiumTerrainProvider({
-                url: Cesium.Ion.resourceUrl("//cesiumjs/terrain"),
-            }),
+            terrainProvider: await Cesium.CesiumTerrainProvider.fromIonAssetId(1),  // Cesium World Terrain
         });
-
         viewer.scene.globe.depthTestAgainstTerrain = true;
 
         try {
-            const tileset = await Cesium.Cesium3DTileset.fromIonAssetId(2765098);
+            // Load your 3D Tileset (with texture)
+            const tileset = await Cesium.Cesium3DTileset.fromIonAssetId(2765098);  
             viewer.scene.primitives.add(tileset);
             await viewer.zoomTo(tileset);
+
+            // Apply the default style if it exists
+            const extras = tileset.asset.extras;
+            if (Cesium.defined(extras) && Cesium.defined(extras.ion) && Cesium.defined(extras.ion.defaultStyle)) {
+                tileset.style = new Cesium.Cesium3DTileStyle(extras.ion.defaultStyle);
+            }
         } catch (error) {
             console.error(error);
         }
-    };
-
-    if (typeof Cesium !== 'undefined') {
-        window.startupCalled = true;
-        window.startup(Cesium).catch((error) => {
-            console.error(error);
-        });
-    }
+    })();
 </script>
 
 </body>
