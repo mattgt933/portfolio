@@ -113,6 +113,14 @@
             }
 
 
+         #cesiumContainer {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+
         .footer {
             background-color: rgba(177, 173, 158);
             color: white;
@@ -211,7 +219,7 @@
     </div>
     <span class="w3-bar-item w3-right menuIcon" onclick="toggleMenu()">☰</span>
 </div>
-
+<div id="cesiumContainer"></div>
 <script>
     // Set up CesiumJS with your ion token
     Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0NWEzYWQ1NS1mY2RkLTQ1ODItYTRlOC1kMTFkNjY4NTA1MTAiLCJpZCI6MjQ2OTkzLCJpYXQiOjE3Mjg1MDk0NTN9.0EU4uj6OVOx0IKQec2P3WoGr6BjTjwD7zyOBadL-k3M";
