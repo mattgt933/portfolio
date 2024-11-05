@@ -3,6 +3,8 @@ name: Scrape Pixieset Images
 on:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight UTC; adjust as needed
+  workflow_dispatch:       # Allows manual triggers
+
 
 jobs:
   scrape:
