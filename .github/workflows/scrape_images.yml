@@ -1,0 +1,35 @@
+name: Scrape Pixieset Images
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC; adjust as needed
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Ensure compatibility with your code
+
+      - name: Install dependencies
+        run: |
+          npm install axios cheerio
+
+      - name: Run scraping script
+        run: node scrapePixieset.js
+
+      - name: Commit and push results
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "your-username"
+          git add imageLinks.json
+          git commit -m "Update image links"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
