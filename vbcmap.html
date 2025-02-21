@@ -33,98 +33,6 @@
             padding: 0;
         }
 
-        .topNav {
-            position: fixed;
-            left: 0px;
-            top: 0px;
-            right: 0px;
-            width: 100%;
-            height: 80px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 99 !important;
-            background-color: rgba(177, 173, 158, .2);
-            color: #000;
-        }
-
-        #name {
-            font-family: RC;
-            position: fixed;
-            left: 35px;
-            top: 0px;
-            z-index: 99;
-            color: #000 !important;
-            white-space: nowrap;
-        }
-
-        .custom-menu {
-            text-align: right;
-            float: right;
-            display: flex;
-            align-items: center;
-            z-index: 99;
-        }
-
-        .custom-menu.active {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 100px;
-            right: 0;
-            width: 100%;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            background-color: rgba(177, 173, 158, .2);
-            text-decoration: none !important;
-        }
-
-        .custom-menu a {
-            text-decoration: none !important;
-            color: #000;
-        }
-
-        .custom-menu p {
-            font-family: Caslon;
-            margin-top: 35px;
-            margin-right: 60px;
-            color: #000;
-        }
-
-        #nav {
-            position: fixed;
-            right: 15px;
-            top: 35px;
-            width: auto;
-            z-index: 99;
-            display: none;
-        }
-
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-        }
-
-        .menuIcon {
-            color: #000;
-            display: none;
-            cursor: pointer;
-            padding: 25px;
-            z-index: 100;
-        }
-
-        #gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0px;
-  position: relative;
-  z-index: 0;
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-            overflow: hidden;
-}
-
         iframe {
 width: 100%;
             height: 75vw;
@@ -168,51 +76,7 @@ width: 100%;
         }
 
         @media screen and (max-width: 880px) {
-            .custom-menu {
-                display: none;
-            }
 
-            #name {
-                width: 100%;
-                left: 0px;
-                text-align: center;
-                padding: 0px;
-            }
-
-            .custom-menu.active {
-                display: flex;
-                text-decoration: none !important;
-            }
-
-            #nav {
-                display: block;
-            }
-
-            .topNav {
-                height: 100px;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-
-            .menuIcon {
-                width: 100%;
-                text-align: center;
-                position: fixed;
-                top: 40px;
-                right: 0;
-                display: block;
-                cursor: pointer;
-                padding: 25px;
-            }
-
-            .custom-menu.active p {
-                margin: 0;
-                padding: 10px;
-                text-align: center;
-                text-decoration: none !important;
-            }
 
 
             iframe {
@@ -226,22 +90,7 @@ width: 100%;
 </head>
 
 <body>
-       <script>
-    function toggleMenu() {
-        var menu = document.getElementById("custom-menu");
-        menu.classList.toggle("active");
-    }
-</script>
-    <div class="topNav">
-        <a href="/"><h1 id="name">MATTHEW THOMAS</h1></a>
-        <div class="custom-menu" id="custom-menu">
-            <a href="portfolio.html"><p class="menu portfolio">Portfolio</p></a>
-            <a href="about.html"><p class="menu about">About</p></a>
-            <a href="contact.html"><p class="menu contact">Contact</p></a>
-            <a href="hire.html"><p class="menu hire">Hire</p></a>
-        </div>
-        <span class="w3-bar-item w3-right menuIcon" onclick="toggleMenu()">☰</span>
-    </div>
+    
     <div id="gallery-container">
 
         <iframe src="https://sandcastle.cesium.com/standalone.html#c=nVPbctowEP0VDQ8dmEllDAm5lGRKIGVMAYfgXOj4RdgChGXLlWQIdPLvXV9oQiZt2r7Yo9XZc86udg0DdSWJNGpTxZKwN0bE86hSSAu0EYlETESIKEW1cqMcgy0RYZ/OSMJ1KwM7IqAROkduiW56i2nXYzbrWbdbyxwyS1nRzZHXthpWED/ctXunGEDf/W4AIKs6vL/aTu5H5nBshpPaTdB3RqbdsfTEueF22wwGzpdguJwcDp2WOXBarN/uxd+AbLAc1Wwn2KbnycOI2cur+mA5NwedoDp0hqe4enV7mCwb9p39WLW+jqhXu67fi65sXC6d5bpzvN3Yl8TvfwzqA7f0yY3cyBOR0mjF6JpKKCai66Ip+C6Lld2Sl53bItKERVS6pQP0w40Q0lRKiFxLsWI+lWeIrAnb9RTnP2cfg2dShNDJVtpbyy+nNAiZB+m/At+nCpjKzWDl0YjiORdTCo2P9cKhSrfmwKZ0QQuGtUxoVoiWm9xWXpFmnIIGIN5wVe84+fVrP7WT41rj5DB1gdCej1iykGm2ogoT3y8X9DkwVyjgWyFCR+wDnm2FTBKP0/+yVX3fVkH/WhVm3Vv8s2bDbBwfva+ZkVeyN0DIMFArjvkG6QVFxbogpTdQMpshEKePTKVbtbNGH7UkKn3Iwka2djgPZ9qQV8xJYRxoYQ79co6poA8f/nCNYZX/ArJb7XFqtZKNYz5N6JexvIq9FXnZwizzt4xZJU8w4MgjGt6iDAMsZOV5YgWnmIt5EQc4gEsHpWamepGiPrMwFlKjRPIyxoamYcyJpsqYJl4A/jyl0rymsUtp+myFmH/+xgYjj0Of4WaWcD5mW+qWLpoG4PfSuCA+i+b2ikpONgBJbTQX5kU/v8AYNw04pqKvc7UQfErkC16oZqF1rM4MQ5HI94jSUHNuDXsiNOaEcyo3xk8">
